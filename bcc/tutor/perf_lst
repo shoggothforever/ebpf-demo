@@ -1,0 +1,225 @@
+  duration_time                                      [Tool event]
+  msr/tsc/                                           [Kernel PMU event]
+  rNNN                                               [Raw hardware event descriptor]
+  cpu/t1=v1[,t2=v2,t3 ...]/modifier                  [Raw hardware event descriptor]
+  mem:<addr>[/len][:access]                          [Hardware breakpoint]
+
+Metric Groups:
+
+BrMispredicts:
+  IpMispredict
+       [Number of Instructions per non-speculative Branch Misprediction (JEClear)]
+Branches:
+  BpTkBranch
+       [Branch instructions per taken branch]
+  IpBranch
+       [Instructions per Branch (lower number means higher occurrence rate)]
+  IpCall
+       [Instructions per (near) call (lower number means higher occurrence rate)]
+  IpFarBranch
+       [Instructions per Far Branch ( Far Branches apply upon transition from application to operating system, handling interrupts, exceptions) [lower number means higher occurrence rate]]
+  IpTB
+       [Instruction per taken branch]
+CacheMisses:
+  L1MPKI
+       [L1 cache true misses per kilo instruction for retired demand loads]
+  L2HPKI_All
+       [L2 cache hits per kilo instruction for all request types (including speculative)]
+  L2MPKI
+       [L2 cache true misses per kilo instruction for retired demand loads]
+  L2MPKI_All
+       [L2 cache misses per kilo instruction for all request types (including speculative)]
+  L3MPKI
+       [L3 cache true misses per kilo instruction for retired demand loads]
+DSB:
+  DSB_Coverage
+       [Fraction of Uops delivered by the DSB (aka Decoded ICache; or Uop Cache)]
+FetchBW:
+  DSB_Coverage
+       [Fraction of Uops delivered by the DSB (aka Decoded ICache; or Uop Cache)]
+  IpTB
+       [Instruction per taken branch]
+Flops:
+  FLOPc
+       [Floating Point Operations Per Cycle]
+  GFLOPs
+       [Giga Floating Point Operations Per Second]
+  IpFLOP
+       [Instructions per Floating Point (FP) Operation (lower number means higher occurrence rate)]
+Flops_SMT:
+  FLOPc_SMT
+       [Floating Point Operations Per Cycle]
+FpArith:
+  IpFLOP
+       [Instructions per Floating Point (FP) Operation (lower number means higher occurrence rate)]
+HPC:
+  CPU_Utilization
+       [Average CPU Utilization]
+  DRAM_BW_Use
+       [Average external Memory Bandwidth Use for reads and writes [GB / sec]]
+  GFLOPs
+       [Giga Floating Point Operations Per Second]
+InsType:
+  IpBranch
+       [Instructions per Branch (lower number means higher occurrence rate)]
+  IpFLOP
+       [Instructions per Floating Point (FP) Operation (lower number means higher occurrence rate)]
+  IpLoad
+       [Instructions per Load (lower number means higher occurrence rate)]
+  IpStore
+       [Instructions per Store (lower number means higher occurrence rate)]
+IoBW:
+  IO_Read_BW
+       [Average IO (network or disk) Bandwidth Use for Reads [GB / sec]]
+  IO_Write_BW
+       [Average IO (network or disk) Bandwidth Use for Writes [GB / sec]]
+L2Evicts:
+  L2_Evictions_NonSilent_PKI
+       [Rate of non silent evictions from the L2 cache per Kilo instruction]
+  L2_Evictions_Silent_PKI
+       [Rate of silent evictions from the L2 cache per Kilo instruction where the evicted lines are dropped (no writeback to L3 or memory)]
+LSD:
+  LSD_Coverage
+       [Fraction of Uops delivered by the LSD (Loop Stream Detector; aka Loop Cache)]
+MemoryBW:
+  DRAM_BW_Use
+       [Average external Memory Bandwidth Use for reads and writes [GB / sec]]
+  L1D_Cache_Fill_BW
+       [Average data fill bandwidth to the L1 data cache [GB / sec]]
+  L2_Cache_Fill_BW
+       [Average data fill bandwidth to the L2 cache [GB / sec]]
+  L3_Cache_Access_BW
+       [Average per-core data access bandwidth to the L3 cache [GB / sec]]
+  L3_Cache_Fill_BW
+       [Average per-core data fill bandwidth to the L3 cache [GB / sec]]
+  MEM_Parallel_Reads
+       [Average number of parallel data read requests to external memory. Accounts for demand loads and L1/L2 prefetches]
+  MLP
+       [Memory-Level-Parallelism (average number of L1 miss demand load when there is at least one such miss. Per-Logical Processor)]
+  PMM_Read_BW
+       [Average 3DXP Memory Bandwidth Use for reads [GB / sec]]
+  PMM_Write_BW
+       [Average 3DXP Memory Bandwidth Use for Writes [GB / sec]]
+MemoryBound:
+  Load_Miss_Real_Latency
+       [Actual Average Latency for L1 data-cache miss demand loads (in core cycles)]
+  MLP
+       [Memory-Level-Parallelism (average number of L1 miss demand load when there is at least one such miss. Per-Logical Processor)]
+MemoryLat:
+  Load_Miss_Real_Latency
+       [Actual Average Latency for L1 data-cache miss demand loads (in core cycles)]
+  MEM_PMM_Read_Latency
+       [Average latency of data read request to external 3D X-Point memory [in nanoseconds]. Accounts for demand loads and L1/L2 data-read prefetches]
+  MEM_Read_Latency
+       [Average latency of data read request to external memory (in nanoseconds). Accounts for demand loads and L1/L2 prefetches]
+MemoryTLB:
+  Page_Walks_Utilization
+       [Utilization of the core's Page Walker(s) serving STLB misses triggered by instruction/Load/Store accesses]
+OS:
+  IpFarBranch
+       [Instructions per Far Branch ( Far Branches apply upon transition from application to operating system, handling interrupts, exceptions) [lower number means higher occurrence rate]]
+  Kernel_Utilization
+       [Fraction of cycles spent in the Operating System (OS) Kernel mode]
+Offcore:
+  L2MPKI_All
+       [L2 cache misses per kilo instruction for all request types (including speculative)]
+  L3_Cache_Access_BW
+       [Average per-core data access bandwidth to the L3 cache [GB / sec]]
+PGO:
+  BpTkBranch
+       [Branch instructions per taken branch]
+  IpTB
+       [Instruction per taken branch]
+Pipeline:
+  CLKS
+       [Per-Logical Processor actual clocks when the Logical Processor is active]
+  CPI
+       [Cycles Per Instruction (per Logical Processor)]
+  ILP
+       [Instruction-Level-Parallelism (average number of uops executed when there is at least 1 uop executed)]
+  UPI
+       [Uops Per Instruction]
+PortsUtil:
+  ILP
+       [Instruction-Level-Parallelism (average number of uops executed when there is at least 1 uop executed)]
+Power:
+  Average_Frequency
+       [Measured Average Frequency for unhalted processors [GHz]]
+  C2_Pkg_Residency
+       [C2 residency percent per package]
+  C3_Core_Residency
+       [C3 residency percent per core]
+  C3_Pkg_Residency
+       [C3 residency percent per package]
+  C6_Core_Residency
+       [C6 residency percent per core]
+  C6_Pkg_Residency
+       [C6 residency percent per package]
+  C7_Core_Residency
+       [C7 residency percent per core]
+  C7_Pkg_Residency
+       [C7 residency percent per package]
+  Turbo_Utilization
+       [Average Frequency Utilization relative nominal frequency]
+Retire:
+  UPI
+       [Uops Per Instruction]
+SMT:
+  CORE_CLKS
+       [Core actual clocks when any Logical Processor is active on the Physical Core]
+  CoreIPC
+       [Instructions Per Cycle (per physical core)]
+  CoreIPC_SMT
+       [Instructions Per Cycle (per physical core)]
+  SMT_2T_Utilization
+       [Fraction of cycles where both hardware Logical Processors were active]
+Server:
+  IO_Read_BW
+       [Average IO (network or disk) Bandwidth Use for Reads [GB / sec]]
+  IO_Write_BW
+       [Average IO (network or disk) Bandwidth Use for Writes [GB / sec]]
+  L2_Evictions_NonSilent_PKI
+       [Rate of non silent evictions from the L2 cache per Kilo instruction]
+  L2_Evictions_Silent_PKI
+       [Rate of silent evictions from the L2 cache per Kilo instruction where the evicted lines are dropped (no writeback to L3 or memory)]
+  MEM_PMM_Read_Latency
+       [Average latency of data read request to external 3D X-Point memory [in nanoseconds]. Accounts for demand loads and L1/L2 data-read prefetches]
+  PMM_Read_BW
+       [Average 3DXP Memory Bandwidth Use for reads [GB / sec]]
+  PMM_Write_BW
+       [Average 3DXP Memory Bandwidth Use for Writes [GB / sec]]
+SoC:
+  DRAM_BW_Use
+       [Average external Memory Bandwidth Use for reads and writes [GB / sec]]
+  IO_Read_BW
+       [Average IO (network or disk) Bandwidth Use for Reads [GB / sec]]
+  IO_Write_BW
+       [Average IO (network or disk) Bandwidth Use for Writes [GB / sec]]
+  MEM_PMM_Read_Latency
+       [Average latency of data read request to external 3D X-Point memory [in nanoseconds]. Accounts for demand loads and L1/L2 data-read prefetches]
+  MEM_Parallel_Reads
+       [Average number of parallel data read requests to external memory. Accounts for demand loads and L1/L2 prefetches]
+  MEM_Read_Latency
+       [Average latency of data read request to external memory (in nanoseconds). Accounts for demand loads and L1/L2 prefetches]
+  PMM_Read_BW
+       [Average 3DXP Memory Bandwidth Use for reads [GB / sec]]
+  PMM_Write_BW
+       [Average 3DXP Memory Bandwidth Use for Writes [GB / sec]]
+  Socket_CLKS
+       [Socket actual clocks when any core is active on that socket]
+Summary:
+  Average_Frequency
+       [Measured Average Frequency for unhalted processors [GHz]]
+  CPU_Utilization
+       [Average CPU Utilization]
+  IPC
+       [Instructions Per Cycle (per Logical Processor)]
+  Instructions
+       [Total number of retired Instructions, Sample with: INST_RETIRED.PREC_DIST]
+TmaL1:
+  CoreIPC
+       [Instructions Per Cycle (per physical core)]
+  CoreIPC_SMT
+       [Instructions Per Cycle (per physical core)]
+  Instructions
+       [Total number of retired Instructions, Sample with: INST_RETIRED.PREC_DIST]
