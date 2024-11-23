@@ -41,7 +41,7 @@ int handle_exec(struct trace_event_raw_sched_process_exec *ctx)
 	unsigned fname_off;
 	struct event *e;
 	int pid;
-	int ts;
+	u64 ts;
 
 	/* remember time exec() was executed for this PID */
 	pid = bpf_get_current_pid_tgid() >> 32;
